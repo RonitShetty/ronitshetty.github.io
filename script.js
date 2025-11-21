@@ -22,7 +22,7 @@ class TypeWriter {
 
         this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
-        let typeSpeed = 100;
+        let typeSpeed = 80;
 
         if (this.isDeleting) {
             typeSpeed /= 2;
@@ -41,7 +41,6 @@ class TypeWriter {
     }
 }
 
-// Init Typewriter
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
@@ -49,6 +48,14 @@ function init() {
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     const wait = txtElement.getAttribute('data-wait');
     new TypeWriter(txtElement, words, wait);
+    
+    // Initialize VanillaTilt on all cards
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+        max: 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
+    });
 }
 
 // 2. Scroll Reveal Animation
@@ -64,7 +71,7 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
 
-// 3. Interactive Particle Network Background
+// 3. Gold Particle Network Background
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -72,7 +79,6 @@ canvas.height = window.innerHeight;
 
 let particlesArray;
 
-// Handle mouse interaction
 let mouse = {
     x: null,
     y: null,
@@ -86,7 +92,6 @@ window.addEventListener('mousemove',
     }
 );
 
-// Create Particle
 class Particle {
     constructor(x, y, directionX, directionY, size, color) {
         this.x = x;
@@ -97,17 +102,14 @@ class Particle {
         this.color = color;
     }
     
-    // Method to draw individual particle
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#64ffda'; // The green accent color
+        ctx.fillStyle = '#D4AF37'; // Gold color
         ctx.fill();
     }
 
-    // Check particle position, move the particle, draw the particle
     update() {
-        // check if particle is still within canvas
         if (this.x > canvas.width || this.x < 0) {
             this.directionX = -this.directionX;
         }
@@ -115,7 +117,6 @@ class Particle {
             this.directionY = -this.directionY;
         }
 
-        // check collision detection - mouse position / particle position
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -133,15 +134,12 @@ class Particle {
                 this.y -= 10;
             }
         }
-        // move particle
         this.x += this.directionX;
         this.y += this.directionY;
-        // draw particle
         this.draw();
     }
 }
 
-// create particle array
 function initParticles() {
     particlesArray = [];
     let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -149,15 +147,14 @@ function initParticles() {
         let size = (Math.random() * 2) + 1;
         let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
         let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-        let directionX = (Math.random() * 2) - 1; // Speed control
+        let directionX = (Math.random() * 2) - 1;
         let directionY = (Math.random() * 2) - 1;
-        let color = '#64ffda';
+        let color = '#D4AF37';
 
         particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
     }
 }
 
-// animation loop
 function animate() {
     requestAnimationFrame(animate);
     ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -168,7 +165,6 @@ function animate() {
     connect();
 }
 
-// check if particles are close enough to draw line between them
 function connect() {
     let opacityValue = 1;
     for (let a = 0; a < particlesArray.length; a++) {
@@ -177,7 +173,7 @@ function connect() {
                 + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
             if (distance < (canvas.width/7) * (canvas.height/7)) {
                 opacityValue = 1 - (distance / 20000);
-                ctx.strokeStyle = 'rgba(100, 255, 218,' + opacityValue + ')';
+                ctx.strokeStyle = 'rgba(212, 175, 55,' + opacityValue + ')'; // Gold connecting lines
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -188,7 +184,6 @@ function connect() {
     }
 }
 
-// resize event
 window.addEventListener('resize',
     function() {
         canvas.width = innerWidth;
@@ -198,7 +193,6 @@ window.addEventListener('resize',
     }
 );
 
-// mouse out event
 window.addEventListener('mouseout',
     function() {
         mouse.x = undefined;
