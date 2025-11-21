@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronit Shetty | AI & ML Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas1"></canvas>
+
+    <nav>
+        <div class="logo">Ronit<span class="accent">.AI</span></div>
+        <ul class="nav-links">
+            <li><a href="#about"><span class="nav-num">01.</span> About</a></li>
+            <li><a href="#skills"><span class="nav-num">02.</span> Skills</a></li>
+            <li><a href="#projects"><span class="nav-num">03.</span> Projects</a></li>
+            <li><a href="#contact"><span class="nav-num">04.</span> Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content hidden">
+            <h4 class="mono-text">Hi, my name is</h4>
+            <h1 class="glitch-effect">Ronit Shetty.</h1>
+            <h2 class="typewriter">I build <span class="txt-type" data-wait="3000" data-words='["Intelligent Systems.", "Secure AI Guardrails.", "Big Data Pipelines.", "Reinforcement Learning Models."]'></span></h2>
+            <p>I am a Computer Engineering student and AI practitioner specializing in Machine Learning, LLM Security, and Full-Stack Development. I bridge the gap between complex data and actionable solutions.</p>
+            <a href="#projects" class="btn">Check out my work</a>
+        </div>
+    </header>
+
+    <section id="about" class="container hidden">
+        <h3 class="section-title"><span>01.</span> About Me</h3>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hello! I'm Ronit, a developer based in Mumbai with a passion for the math behind the magic. My journey started with simple Python scripts and has evolved into building complex <strong>Multi-modal AI systems</strong> and securing Large Language Models.</p>
+                <p>I am currently pursuing my B.Tech Integrated in Computer Engineering at <strong>NMIMS (MPSTME)</strong>. My recent focus is on the intersection of <strong>Cybersecurity and AI</strong>—making sure the intelligent systems of tomorrow are safe to use.</p>
+                <p>Here are a few technologies I've been working with:</p>
+                <ul class="skills-list">
+                    <li>Python (TensorFlow, PyTorch)</li>
+                    <li>LLM Security (BERT, Transformers)</li>
+                    <li>Cloud (AWS, Google Cloud)</li>
+                    <li>Big Data (Hive, Hadoop)</li>
+                    <li>Reinforcement Learning</li>
+                    <li>React Native & Spring Boot</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h3 class="section-title hidden"><span>02.</span> Featured Projects</h3>
+
+        <div class="project-card hidden">
+            <div class="project-content">
+                <div class="project-overline">Featured Project</div>
+                <h4 class="project-title">CitizenSafe: Multimodal AI</h4>
+                <div class="project-desc">
+                    <p>An AI-powered crime management ecosystem. It fuses <strong>Text (NLP)</strong>, <strong>Audio (Sentiment Analysis)</strong>, and <strong>Spatio-temporal data</strong> to predict crime hotspots and assess escalation risk. Includes a React Native app for citizens and a dashboard for officers.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>Python</li>
+                    <li>TensorFlow</li>
+                    <li>BERT</li>
+                    <li>React Native</li>
+                    <li>GCP</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card hidden">
+            <div class="project-content">
+                <div class="project-overline">LLM Security Research</div>
+                <h4 class="project-title">PromptFence</h4>
+                <div class="project-desc">
+                    <p>A semantic guardrail for Healthcare AI. It defends against <strong>Prompt Injection Attacks</strong> using contrastive fine-tuning on BERT embeddings. Achieved <strong>92% accuracy</strong> in detecting malicious intent, significantly outperforming baseline models.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>LLMs</li>
+                    <li>Contrastive Learning</li>
+                    <li>Python</li>
+                    <li>Cybersecurity</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card hidden">
+            <div class="project-content">
+                <div class="project-overline">Machine Learning</div>
+                <h4 class="project-title">Dynamic Pricing AI</h4>
+                <div class="project-desc">
+                    <p>A hybrid system for e-commerce pricing. Combines Supervised Learning (CatBoost) for demand forecasting with <strong>Reinforcement Learning (DQN, DDPG)</strong> to optimize prices dynamically in real-time.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>Reinforcement Learning</li>
+                    <li>CatBoost</li>
+                    <li>Pandas</li>
+                    <li>Optimization</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="center-header hidden">Other Noteworthy Projects</h4>
+        <div class="other-projects-grid">
+            
+            <div class="small-card hidden">
+                <div class="card-header">
+                    <i class="far fa-folder"></i>
+                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <h3>Automated Receipt Processor</h3>
+                <p>A Serverless pipeline using AWS Lambda, Textract, and SES to automate financial data extraction from emails with 95% accuracy.</p>
+                <ul class="card-tech">
+                    <li>AWS Lambda</li>
+                    <li>Textract</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+            <div class="small-card hidden">
+                <div class="card-header">
+                    <i class="far fa-folder"></i>
+                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <h3>Supply Chain Analytics</h3>
+                <p>Big Data analysis on the DataCo dataset using Apache Hive (Hadoop) to optimize logistics, shipping routes, and fraud detection.</p>
+                <ul class="card-tech">
+                    <li>HiveQL</li>
+                    <li>Hadoop</li>
+                    <li>Big Data</li>
+                </ul>
+            </div>
+
+            <div class="small-card hidden">
+                <div class="card-header">
+                    <i class="far fa-folder"></i>
+                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <h3>Travel Itinerary Generator</h3>
+                <p>A robust microservices backend for travel planning. Handles user auth, itinerary management, and bookings with RBAC.</p>
+                <ul class="card-tech">
+                    <li>Java Spring Boot</li>
+                    <li>Microservices</li>
+                    <li>REST API</li>
+                </ul>
+            </div>
+
+             <div class="small-card hidden">
+                <div class="card-header">
+                    <i class="far fa-folder"></i>
+                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <h3>RPA Movie Classifier</h3>
+                <p>Automated bot using UiPath and AI Center to extract reviews from Excel, classify sentiment, and generate reports.</p>
+                <ul class="card-tech">
+                    <li>UiPath</li>
+                    <li>AI Center</li>
+                    <li>Automation</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="container center-text hidden">
+        <h3 class="section-title"><span>04.</span> What's Next?</h3>
+        <h2 class="big-title">Get In Touch</h2>
+        <p>I am currently looking for new opportunities in AI, Machine Learning, and Data Engineering. Whether you have a question or just want to say hi, my inbox is always open!</p>
+        <a href="mailto:ronitshetty128@nmims.in" class="btn">Say Hello</a>
+        
+        <div class="social-icons">
+            <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Ronit Shetty</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
