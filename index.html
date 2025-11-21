@@ -3,89 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ronit Shetty | AI & ML Engineer</title>
+    <title>Ronit Shetty | AI Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <canvas id="canvas1"></canvas>
 
     <nav>
-        <div class="logo">Ronit<span class="accent">.AI</span></div>
+        <div class="logo">R<span class="accent">S</span></div>
         <ul class="nav-links">
-            <li><a href="#about"><span class="nav-num">01.</span> About</a></li>
-            <li><a href="#skills"><span class="nav-num">02.</span> Skills</a></li>
-            <li><a href="#projects"><span class="nav-num">03.</span> Projects</a></li>
-            <li><a href="#contact"><span class="nav-num">04.</span> Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="resume.pdf" target="_blank" class="resume-btn">Resume</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <div class="hero-content hidden">
-            <h4 class="mono-text">Hi, my name is</h4>
-            <h1 class="glitch-effect">Ronit Shetty.</h1>
-            <h2 class="typewriter">I build <span class="txt-type" data-wait="3000" data-words='["Intelligent Systems.", "Secure AI Guardrails.", "Big Data Pipelines.", "Reinforcement Learning Models."]'></span></h2>
-            <p>I am a Computer Engineering student and AI practitioner specializing in Machine Learning, LLM Security, and Full-Stack Development. I bridge the gap between complex data and actionable solutions.</p>
-            <a href="#projects" class="btn">Check out my work</a>
+        <div class="hero-container">
+            <div class="hero-text hidden">
+                <h4 class="mono-text">Hello, I am</h4>
+                <h1 class="glitch-effect">Ronit Shetty.</h1>
+                <h2 class="typewriter">Engineering <span class="txt-type" data-wait="2500" data-words='["Intelligence.", "Secure AI.", "Big Data Systems.", "Future Tech."]'></span></h2>
+                <p>I am an AI Engineer and Full-Stack Developer bridging the gap between complex data and actionable intelligence. I specialize in building secure LLMs, reinforcement learning models, and scalable microservices.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="https://www.linkedin.com/in/ronit-shetty" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/RonitShetty" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="hero-img hidden">
+                <div class="img-wrapper">
+                    <img src="profile.jpg" alt="Ronit Shetty">
+                    <div class="img-border"></div>
+                </div>
+            </div>
         </div>
     </header>
 
     <section id="about" class="container hidden">
-        <h3 class="section-title"><span>01.</span> About Me</h3>
+        <div class="section-header">
+            <h3 class="section-title"><span>01.</span> About Me</h3>
+            <div class="line"></div>
+        </div>
         <div class="about-content">
             <div class="about-text">
-                <p>Hello! I'm Ronit, a developer based in Mumbai with a passion for the math behind the magic. My journey started with simple Python scripts and has evolved into building complex <strong>Multi-modal AI systems</strong> and securing Large Language Models.</p>
-                <p>I am currently pursuing my B.Tech Integrated in Computer Engineering at <strong>NMIMS (MPSTME)</strong>. My recent focus is on the intersection of <strong>Cybersecurity and AI</strong>—making sure the intelligent systems of tomorrow are safe to use.</p>
-                <p>Here are a few technologies I've been working with:</p>
-                <ul class="skills-list">
-                    <li>Python (TensorFlow, PyTorch)</li>
-                    <li>LLM Security (BERT, Transformers)</li>
-                    <li>Cloud (AWS, Google Cloud)</li>
-                    <li>Big Data (Hive, Hadoop)</li>
+                <p>I'm a Computer Engineering student at <strong>NMIMS (MPSTME)</strong> with a relentless drive to solve difficult problems. My journey began with simple scripts and has evolved into architecting <strong>Enterprise-grade AI systems</strong>.</p>
+                <p>I don't just build models; I build systems. Whether it's analyzing supply chains using <strong>Apache Hive</strong>, securing Healthcare AI against prompt injections, or optimizing prices with <strong>Reinforcement Learning</strong>, I focus on impact and scalability.</p>
+                <p>When I'm not coding, I'm likely analyzing market trends, solving combinatorics problems, or practicing German.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container hidden">
+        <div class="section-header">
+            <h3 class="section-title"><span>02.</span> Technical Arsenal</h3>
+            <div class="line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4><i class="fas fa-brain"></i> AI & Machine Learning</h4>
+                <ul>
+                    <li>TensorFlow & PyTorch</li>
+                    <li>LLMs (BERT, GPT)</li>
+                    <li>Computer Vision (OpenCV)</li>
                     <li>Reinforcement Learning</li>
-                    <li>React Native & Spring Boot</li>
+                    <li>NLP & Sentiment Analysis</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-code"></i> Languages & Core</h4>
+                <ul>
+                    <li>Python (Expert)</li>
+                    <li>Java</li>
+                    <li>SQL (MySQL, PostgreSQL)</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>HiveQL</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-server"></i> Backend & Data</h4>
+                <ul>
+                    <li>Spring Boot (Microservices)</li>
+                    <li>Big Data (Hadoop, Hive)</li>
+                    <li>AWS & Google Cloud</li>
+                    <li>RESTful APIs</li>
+                    <li>Docker & Kubernetes</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-laptop-code"></i> Web & Tools</h4>
+                <ul>
+                    <li>React & React Native</li>
+                    <li>Git & GitHub</li>
+                    <li>UiPath (RPA)</li>
+                    <li>Tableau</li>
+                    <li>Linux/Unix</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h3 class="section-title hidden"><span>02.</span> Featured Projects</h3>
+        <div class="section-header">
+            <h3 class="section-title hidden"><span>03.</span> Selected Works</h3>
+            <div class="line"></div>
+        </div>
 
-        <div class="project-card hidden">
+        <div class="project-card featured hidden" data-tilt>
             <div class="project-content">
-                <div class="project-overline">Featured Project</div>
-                <h4 class="project-title">CitizenSafe: Multimodal AI</h4>
+                <div class="project-overline">Capstone Research</div>
+                <h4 class="project-title">CitizenSafe: AI Crime Analytics</h4>
                 <div class="project-desc">
-                    <p>An AI-powered crime management ecosystem. It fuses <strong>Text (NLP)</strong>, <strong>Audio (Sentiment Analysis)</strong>, and <strong>Spatio-temporal data</strong> to predict crime hotspots and assess escalation risk. Includes a React Native app for citizens and a dashboard for officers.</p>
+                    <p>A comprehensive proactive policing framework. Features <strong>Spatiotemporal Crime Prediction</strong>, real-time <strong>Voice Sentiment Analysis</strong> for emergency calls, and Fake Report Detection using NLP. Integrated into a React Native app.</p>
                 </div>
                 <ul class="project-tech">
                     <li>Python</li>
                     <li>TensorFlow</li>
                     <li>BERT</li>
-                    <li>React Native</li>
                     <li>GCP</li>
+                    <li>React Native</li>
                 </ul>
                 <div class="project-links">
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
 
-        <div class="project-card hidden">
+        <div class="project-card featured hidden" data-tilt>
             <div class="project-content">
-                <div class="project-overline">LLM Security Research</div>
+                <div class="project-overline">Cybersecurity & AI</div>
                 <h4 class="project-title">PromptFence</h4>
                 <div class="project-desc">
-                    <p>A semantic guardrail for Healthcare AI. It defends against <strong>Prompt Injection Attacks</strong> using contrastive fine-tuning on BERT embeddings. Achieved <strong>92% accuracy</strong> in detecting malicious intent, significantly outperforming baseline models.</p>
+                    <p>A semantic security guardrail for Healthcare LLMs. Defends against <strong>Prompt Injection Attacks</strong> by using contrastive fine-tuning on BERT embeddings to detect malicious intent with <strong>92% accuracy</strong>.</p>
                 </div>
                 <ul class="project-tech">
-                    <li>LLMs</li>
+                    <li>LLM Security</li>
                     <li>Contrastive Learning</li>
+                    <li>BERT</li>
                     <li>Python</li>
-                    <li>Cybersecurity</li>
                 </ul>
                 <div class="project-links">
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
@@ -93,18 +154,18 @@
             </div>
         </div>
 
-        <div class="project-card hidden">
+        <div class="project-card featured hidden" data-tilt>
             <div class="project-content">
-                <div class="project-overline">Machine Learning</div>
-                <h4 class="project-title">Dynamic Pricing AI</h4>
+                <div class="project-overline">Reinforcement Learning</div>
+                <h4 class="project-title">Dynamic Pricing Engine</h4>
                 <div class="project-desc">
-                    <p>A hybrid system for e-commerce pricing. Combines Supervised Learning (CatBoost) for demand forecasting with <strong>Reinforcement Learning (DQN, DDPG)</strong> to optimize prices dynamically in real-time.</p>
+                    <p>An intelligent pricing system for retail. Combines <strong>Supervised Learning (CatBoost)</strong> for demand forecasting with <strong>Reinforcement Learning (DQN, DDPG)</strong> to optimize revenue dynamically based on market conditions.</p>
                 </div>
                 <ul class="project-tech">
                     <li>Reinforcement Learning</li>
                     <li>CatBoost</li>
                     <li>Pandas</li>
-                    <li>Optimization</li>
+                    <li>Scikit-Learn</li>
                 </ul>
                 <div class="project-links">
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
@@ -115,13 +176,13 @@
         <h4 class="center-header hidden">Other Noteworthy Projects</h4>
         <div class="other-projects-grid">
             
-            <div class="small-card hidden">
+            <div class="small-card hidden" data-tilt>
                 <div class="card-header">
                     <i class="far fa-folder"></i>
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
                 <h3>Automated Receipt Processor</h3>
-                <p>A Serverless pipeline using AWS Lambda, Textract, and SES to automate financial data extraction from emails with 95% accuracy.</p>
+                <p>Serverless pipeline using AWS Lambda, Textract, and SES to extract financial data from emails automatically.</p>
                 <ul class="card-tech">
                     <li>AWS Lambda</li>
                     <li>Textract</li>
@@ -129,41 +190,41 @@
                 </ul>
             </div>
 
-            <div class="small-card hidden">
+            <div class="small-card hidden" data-tilt>
                 <div class="card-header">
                     <i class="far fa-folder"></i>
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
-                <h3>Supply Chain Analytics</h3>
-                <p>Big Data analysis on the DataCo dataset using Apache Hive (Hadoop) to optimize logistics, shipping routes, and fraud detection.</p>
+                <h3>Supply Chain Big Data</h3>
+                <p>Analyzed the DataCo dataset using Apache Hive (Hadoop) to optimize logistics and detect shipping fraud.</p>
                 <ul class="card-tech">
                     <li>HiveQL</li>
                     <li>Hadoop</li>
-                    <li>Big Data</li>
+                    <li>HDFS</li>
                 </ul>
             </div>
 
-            <div class="small-card hidden">
+            <div class="small-card hidden" data-tilt>
                 <div class="card-header">
                     <i class="far fa-folder"></i>
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
-                <h3>Travel Itinerary Generator</h3>
-                <p>A robust microservices backend for travel planning. Handles user auth, itinerary management, and bookings with RBAC.</p>
+                <h3>Travel Microservices</h3>
+                <p>A distributed backend for travel planning. Handles User Auth, Itineraries, and Bookings via REST APIs.</p>
                 <ul class="card-tech">
-                    <li>Java Spring Boot</li>
+                    <li>Java</li>
+                    <li>Spring Boot</li>
                     <li>Microservices</li>
-                    <li>REST API</li>
                 </ul>
             </div>
 
-             <div class="small-card hidden">
+             <div class="small-card hidden" data-tilt>
                 <div class="card-header">
                     <i class="far fa-folder"></i>
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
                 <h3>RPA Movie Classifier</h3>
-                <p>Automated bot using UiPath and AI Center to extract reviews from Excel, classify sentiment, and generate reports.</p>
+                <p>Automated bot using UiPath and AI Center to classify movie review sentiment from Excel sheets.</p>
                 <ul class="card-tech">
                     <li>UiPath</li>
                     <li>AI Center</li>
@@ -175,21 +236,21 @@
     </section>
 
     <section id="contact" class="container center-text hidden">
-        <h3 class="section-title"><span>04.</span> What's Next?</h3>
+        <h3 class="section-title small-center"><span>04.</span> What's Next?</h3>
         <h2 class="big-title">Get In Touch</h2>
-        <p>I am currently looking for new opportunities in AI, Machine Learning, and Data Engineering. Whether you have a question or just want to say hi, my inbox is always open!</p>
-        <a href="mailto:ronitshetty128@nmims.in" class="btn">Say Hello</a>
-        
-        <div class="social-icons">
-            <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
+        <p>I am actively seeking opportunities in AI Engineering and Data Science. Whether you have a question about my research or just want to say hi, my inbox is open.</p>
+        <a href="mailto:ronit.shetty@example.com" class="btn big-btn">Say Hello</a>
     </section>
 
     <footer>
         <p>Designed & Built by Ronit Shetty</p>
+        <div class="social-footer">
+            <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ronit-shetty" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
