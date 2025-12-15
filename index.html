@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader">
+    <div class="loader-content">
+        <div class="loader-text">INITIALIZING SYSTEM...</div>
+        <div class="loader-bar"><div class="bar-fill"></div></div>
+    </div>
+</div>
 
     <canvas id="canvas1"></canvas>
 
@@ -18,6 +24,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Work</a></li>
+            <li><a href="#publications">Publications</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="resume.pdf" target="_blank" class="resume-btn">Resume</a></li>
         </ul>
@@ -44,17 +51,84 @@
             </div>
         </div>
     </header>
-
+<div class="tech-marquee">
+        <div class="tech-track">
+            <span>TensorFlow</span> <span class="separator">•</span>
+            <span>PyTorch</span> <span class="separator">•</span>
+            <span>AWS</span> <span class="separator">•</span>
+            <span>Docker</span> <span class="separator">•</span>
+            <span>Kubernetes</span> <span class="separator">•</span>
+            <span>React Native</span> <span class="separator">•</span>
+            <span>OpenCV</span> <span class="separator">•</span>
+            <span>Spring Boot</span> <span class="separator">•</span>
+            <span>Apache Hive</span> <span class="separator">•</span>
+            <span>LLM Security</span> <span class="separator">•</span>
+            <span>TensorFlow</span> <span class="separator">•</span>
+            <span>PyTorch</span> <span class="separator">•</span>
+            <span>AWS</span> <span class="separator">•</span>
+            <span>Docker</span> <span class="separator">•</span>
+            <span>Kubernetes</span> <span class="separator">•</span>
+            <span>React Native</span> <span class="separator">•</span>
+            <span>OpenCV</span> <span class="separator">•</span>
+            <span>Spring Boot</span> <span class="separator">•</span>
+            <span>Apache Hive</span> <span class="separator">•</span>
+            <span>LLM Security</span> <span class="separator">•</span>
+        </div>
+    </div>
+    <br><br>
     <section id="about" class="container hidden">
         <div class="section-header">
-            <h3 class="section-title"><span>01.</span> About Me</h3>
+            <h3 class="section-title"><span>01.</span> About & Timeline</h3>
             <div class="line"></div>
         </div>
         <div class="about-content">
             <div class="about-text">
                 <p>I'm a Computer Engineering student at <strong>NMIMS (MPSTME)</strong> with a relentless drive to solve difficult problems. My journey began with simple scripts and has evolved into architecting <strong>Enterprise-grade AI systems</strong>.</p>
-                <p>I don't just build models; I build systems. Whether it's analyzing supply chains using <strong>Apache Hive</strong>, securing Healthcare AI against prompt injections, or optimizing prices with <strong>Reinforcement Learning</strong>, I focus on impact and scalability.</p>
-                <p>When I'm not coding, I'm likely analyzing market trends, solving combinatorics problems, or practicing German.</p>
+                <p>I focus on building complete ecosystems—from the <strong>Big Data pipelines</strong> that process information to the <strong>Mobile interfaces</strong> users interact with.</p>
+            </div>
+            
+            <div class="timeline">
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - Present</span>
+                        <h3>B.Tech Integrated (Computer Engineering)</h3>
+                        <p>MPSTME, NMIMS University.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - 2025</span>
+                        <h3>Machine Learning Research</h3>
+                        <p>Developed "PromptFence" (LLM Security) and "CitizenSafe" (Smart Policing) focusing on multimodal AI and safety guardrails.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3>Big Data Analytics</h3>
+                        <p>Engineered a Supply Chain Analytics platform using <strong>Apache Hive</strong> and Hadoop. Processed large-scale datasets to optimize logistics and visualize risk.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3>Mobile App & AI Development</h3>
+                        <p>Built <strong>NutriTrack</strong>, a diet recommendation mobile app. Personalizes meal plans based on user health metrics, AI scanner to determine nutritional value.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3>Full Stack Architecture</h3>
+                        <p>Designed a Travel Itinerary Generator using <strong>Spring Boot Microservices</strong>. Handled complex role-based auth and booking transactions.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -110,11 +184,11 @@
 
     <section id="projects" class="container">
         <div class="section-header">
-            <h3 class="section-title hidden"><span>03.</span> Selected Works</h3>
+            <h3 class="section-title hidden"><span>03.</span>Showcased Projects</h3>
             <div class="line"></div>
         </div>
 
-        <div class="project-card featured hidden" data-tilt>
+        <div class="project-card featured hidden">
             <div class="project-content">
                 <div class="project-overline">Capstone Research</div>
                 <h4 class="project-title">CitizenSafe: AI Crime Analytics</h4>
@@ -129,13 +203,12 @@
                     <li>React Native</li>
                 </ul>
                 <div class="project-links">
-                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/RonitShetty/citizensafe-app/blob/main/README.md" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
 
-        <div class="project-card featured hidden" data-tilt>
+        <div class="project-card featured hidden">
             <div class="project-content">
                 <div class="project-overline">Cybersecurity & AI</div>
                 <h4 class="project-title">PromptFence</h4>
@@ -149,12 +222,12 @@
                     <li>Python</li>
                 </ul>
                 <div class="project-links">
-                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/RonitShetty/PromptFence/blob/main/README.md" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
 
-        <div class="project-card featured hidden" data-tilt>
+        <div class="project-card featured hidden">
             <div class="project-content">
                 <div class="project-overline">Reinforcement Learning</div>
                 <h4 class="project-title">Dynamic Pricing Engine</h4>
@@ -168,7 +241,7 @@
                     <li>Scikit-Learn</li>
                 </ul>
                 <div class="project-links">
-                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/RonitShetty/ml-rl-dynamic-pricing/blob/main/README.md" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -176,7 +249,7 @@
         <h4 class="center-header hidden">Other Noteworthy Projects</h4>
         <div class="other-projects-grid">
             
-            <div class="small-card hidden" data-tilt>
+            <div class="small-card hidden">
                 <div class="card-header">
                     <i class="far fa-folder"></i>
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
@@ -190,10 +263,10 @@
                 </ul>
             </div>
 
-            <div class="small-card hidden" data-tilt>
+            <div class="small-card hidden">
                 <div class="card-header">
                     <i class="far fa-folder"></i>
-                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/RonitShetty/Supply-Chain-Hive/blob/main/README.md" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
                 <h3>Supply Chain Big Data</h3>
                 <p>Analyzed the DataCo dataset using Apache Hive (Hadoop) to optimize logistics and detect shipping fraud.</p>
@@ -204,10 +277,10 @@
                 </ul>
             </div>
 
-            <div class="small-card hidden" data-tilt>
+            <div class="small-card hidden">
                 <div class="card-header">
                     <i class="far fa-folder"></i>
-                    <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/RonitShetty/MA_PROJ/blob/main/README.md" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
                 <h3>Travel Microservices</h3>
                 <p>A distributed backend for travel planning. Handles User Auth, Itineraries, and Bookings via REST APIs.</p>
@@ -218,7 +291,7 @@
                 </ul>
             </div>
 
-             <div class="small-card hidden" data-tilt>
+             <div class="small-card hidden">
                 <div class="card-header">
                     <i class="far fa-folder"></i>
                     <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
@@ -232,13 +305,55 @@
                 </ul>
             </div>
 
+            <div class="small-card hidden">
+                <div class="card-header">
+                    <i class="far fa-folder"></i>
+                    <a href="https://github.com/RonitShetty/NutriTrack/blob/main/README.md" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <h3>NutriTrack</h3>
+                <p>A diet recommendation mobile app. Personalizes meal plans based on user health metrics, AI scanner to determine nutritional value.</p>
+                <ul class="card-tech">
+                    <li>Python</li>
+                    <li>Scikit-Learn</li>
+                    <li>Streamlit</li>
+                </ul>
+            </div>
+
         </div>
     </section>
+<section id="publications" class="container">
+        <div class="section-header">
+            <h3 class="section-title"><span>04.</span> Publications & Research</h3>
+            <div class="line"></div>
+        </div>
+        
+        <div class="pub-grid">
+            <div class="pub-card">
+                <div class="pub-icon"><i class="fas fa-scroll"></i></div>
+                <div class="pub-content">
+                    <h4>PromptFence: A Semantic Guardrail for Healthcare AI</h4>
+                    <p class="pub-meta">IEEE Format • Cybersecurity & AI</p>
+                    <p>Defending Large Language Models against prompt injection attacks using BERT-based contrastive fine-tuning.</p>
+                    <a href="#" class="pub-link">Read Paper <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
 
+            <div class="pub-card">
+                <div class="pub-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="pub-content">
+                    <h4>CitizenSafe: Multimodal Crime Management Framework</h4>
+                    <p class="pub-meta">Capstone Research • 2025</p>
+                    <p>An integrated system fusing Spatiotemporal Prediction, Audio Analysis, and Risk Assessment for proactive policing.</p>
+                    <a href="#" class="pub-link">Read Paper <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div> 
+    </section>
     <section id="contact" class="container center-text hidden">
-        <h3 class="section-title small-center"><span>04.</span> What's Next?</h3>
+        <h3 class="section-title small-center"><span>05.</span> What's Next?</h3>
         <h2 class="big-title">Get In Touch</h2>
         <p>I am actively seeking opportunities in AI Engineering and Data Science. Whether you have a question about my research or just want to say hi, my inbox is open.</p>
+        <br><br>
         <a href="mailto:ronit.shetty@example.com" class="btn big-btn">Say Hello</a>
     </section>
 
@@ -248,9 +363,39 @@
             <a href="https://github.com/RonitShetty" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/ronit-shetty" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </div>
+        <p class="game-trigger" onclick="openGame()">[ Initiate Neural Snake Protocol ]</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close-game" onclick="closeGame()">&times;</span>
+            <h2 style="color:white; font-family: 'Fira Code'">Neural Snake</h2>
+            <div class="score-board">Score: <span id="score">0</span></div>
+            <canvas id="gameCanvas" width="300" height="300"></canvas>
+            <p style="color: #8892b0; font-size: 12px;">Use Arrow Keys to Collect Data</p>
+            <button class="btn" onclick="startGame()">Start Simulation</button>
+        </div>
+    </div>
+<div class="chat-widget">
+        <button id="chat-toggle" onclick="toggleChat()" aria-label="Open AI Assistant">
+            <i class="fas fa-robot"></i>
+        </button>
+        
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <span>Ronit.AI Assistant</span>
+                <span class="close-chat" onclick="toggleChat()" role="button" aria-label="Close Chat" tabindex="0">&times;</span>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="bot-msg">Hello! I am trained on Ronit's resume. Ask me about his projects, skills, or experience.</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Ask a question..." onkeypress="handleEnter(event)" aria-label="Type your message">
+                <button onclick="sendMessage()" aria-label="Send Message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
+    
 </body>
 </html>
