@@ -1,3 +1,148 @@
+// Remove Preloader
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }, 1500); // 1.5s delay for effect
+});
+
+
+/* --- ADVANCED AI CHATBOT LOGIC --- */
+const chatWindow = document.getElementById('chat-window');
+const chatBody = document.getElementById('chat-body');
+const userInput = document.getElementById('user-input');
+
+// Toggle Chat Window
+function toggleChat() {
+    if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'flex';
+        // Focus input when opened
+        setTimeout(() => userInput.focus(), 100);
+    } else {
+        chatWindow.style.display = 'none';
+    }
+}
+
+// Handle Enter Key
+function handleEnter(event) {
+    if (event.key === 'Enter') sendMessage();
+}
+
+// Send User Message
+function sendMessage() {
+    const text = userInput.value.trim();
+    if (text === "") return;
+
+    // Add User Message
+    addMessage(text, 'user-msg');
+    userInput.value = '';
+
+    // Simulate "Thinking" Delay (makes it feel more real)
+    showTypingIndicator();
+    
+    setTimeout(() => {
+        removeTypingIndicator();
+        const response = getSmartResponse(text.toLowerCase());
+        addMessage(response, 'bot-msg');
+        // Auto scroll to bottom
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 800);
+}
+
+// Add Message to UI
+function addMessage(text, className) {
+    const div = document.createElement('div');
+    div.className = className;
+    div.innerHTML = text; // innerHTML allows links if needed
+    chatBody.appendChild(div);
+}
+
+// Typing Indicator Visual
+function showTypingIndicator() {
+    const div = document.createElement('div');
+    div.className = 'bot-msg typing-indicator';
+    div.id = 'typing-indicator';
+    div.innerHTML = '<span>.</span><span>.</span><span>.</span>';
+    chatBody.appendChild(div);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    const indicator = document.getElementById('typing-indicator');
+    if (indicator) indicator.remove();
+}
+
+/* --- KNOWLEDGE BASE --- */
+const knowledgeBase = [
+    {
+        keywords: ["hello", "hi", "hey", "start", "greetings"],
+        response: "Hello! I am Ronit's virtual assistant. I can tell you about his <b>Projects</b>, <b>Skills</b>, or how to <b>Contact</b> him."
+    },
+    {
+        keywords: ["citizensafe", "crime", "capstone", "police", "safety"],
+        response: "<b>CitizenSafe</b> is Ronit's flagship Capstone project. It uses Multimodal AI (BERT + LSTM) to analyze crime reports and audio distress signals for proactive policing. <a href='https://github.com/RonitShetty' target='_blank' style='color:#64ffda'>Check the repo here.</a>"
+    },
+    {
+        keywords: ["promptfence", "security", "llm", "injection", "hack", "cyber"],
+        response: "<b>PromptFence</b> is a research project focusing on LLM Security. It acts as a semantic guardrail to prevent Prompt Injection attacks in Healthcare AI systems."
+    },
+    {
+        keywords: ["skill", "stack", "tech", "python", "java", "react", "language", "code"],
+        response: "Ronit's core stack includes:<br>• <b>AI/ML:</b> Python, TensorFlow, PyTorch, BERT<br>• <b>Web:</b> React, Node.js<br>• <b>Data:</b> Apache Hive, Hadoop<br>• <b>Cloud:</b> AWS, Google Cloud"
+    },
+    {
+        keywords: ["contact", "email", "hire", "resume", "reach"],
+        response: "You can reach Ronit via email at <a href='mailto:ronitshetty128@nmims.in' style='color:#64ffda'>ronitshetty128@nmims.in</a> or connect on <a href='https://linkedin.com/in/ronit-shetty' target='_blank' style='color:#64ffda'>LinkedIn</a>."
+    },
+    {
+        keywords: ["experience", "work", "job", "internship", "company"],
+        response: "Ronit has experience building enterprise-grade AI systems and full-stack applications. Check the <b>About</b> section for his full timeline!"
+    },
+    {
+        keywords: ["big data", "hive", "hadoop", "supply chain"],
+        response: "He engineered a <b>Supply Chain Analytics</b> platform using Apache Hive to process large-scale datasets for logistics optimization."
+    }
+];
+
+// Smart Matching Logic
+function getSmartResponse(input) {
+    // 1. Check for exact keyword matches
+    for (let topic of knowledgeBase) {
+        for (let key of topic.keywords) {
+            if (input.includes(key)) {
+                return topic.response;
+            }
+        }
+    }
+
+    // 2. Fallback for unknown queries
+    return "I'm not sure about that yet. Try asking about <b>'Projects'</b>, <b>'Skills'</b>, or <b>'Research'</b>.";
+}
+// Active Link Highlight
+const sections = document.querySelectorAll('section');
+const navLi = document.querySelectorAll('nav ul li a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLi.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href').includes(current)) {
+            a.classList.add('active');
+        }
+    });
+});
+
 // 1. Typewriter Effect
 class TypeWriter {
     constructor(txtElement, words, wait = 3000) {
@@ -44,18 +189,11 @@ class TypeWriter {
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
+    // Init Typewriter
     const txtElement = document.querySelector('.txt-type');
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     const wait = txtElement.getAttribute('data-wait');
     new TypeWriter(txtElement, words, wait);
-    
-    // Initialize VanillaTilt on all cards
-    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-        max: 10,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2,
-    });
 }
 
 // 2. Scroll Reveal Animation
@@ -71,7 +209,22 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
 
-// 3. Gold Particle Network Background
+// 3. Spotlight Card Effect (Mouse Tracking)
+const cards = document.querySelectorAll(".project-card, .small-card");
+
+cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    });
+});
+
+
+// 4. Gold Particle Network Background
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -202,3 +355,125 @@ window.addEventListener('mouseout',
 
 initParticles();
 animate();
+
+
+/* --- NEURAL SNAKE GAME LOGIC --- */
+const modal = document.getElementById("gameModal");
+const gameCanvas = document.getElementById("gameCanvas");
+const gameCtx = gameCanvas.getContext("2d");
+const scoreElement = document.getElementById("score");
+
+let snake = [{x: 150, y: 150}];
+let food = {x: 0, y: 0};
+let dx = 10;
+let dy = 0;
+let score = 0;
+let gameInterval;
+let isGameRunning = false;
+
+function openGame() {
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+}
+
+function closeGame() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+    stopGame();
+}
+
+function startGame() {
+    if(isGameRunning) return;
+    isGameRunning = true;
+    score = 0;
+    scoreElement.innerText = score;
+    snake = [{x: 150, y: 150}];
+    dx = 10;
+    dy = 0;
+    createFood();
+    if (gameInterval) clearInterval(gameInterval);
+    gameInterval = setInterval(mainGameLoop, 100);
+}
+
+function stopGame() {
+    clearInterval(gameInterval);
+    isGameRunning = false;
+    gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
+}
+
+function mainGameLoop() {
+    if (didGameEnd()) {
+        alert("System Failure! Data Collection Halted. Score: " + score);
+        stopGame();
+        return;
+    }
+    
+    const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+    snake.unshift(head);
+    
+    const didEatFood = snake[0].x === food.x && snake[0].y === food.y;
+    if (didEatFood) {
+        score += 10;
+        scoreElement.innerText = score;
+        createFood();
+    } else {
+        snake.pop();
+    }
+    
+    drawGame();
+}
+
+function drawGame() {
+    // Clear canvas
+    gameCtx.fillStyle = "#0a192f";
+    gameCtx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+    
+    // Draw Food
+    gameCtx.fillStyle = "#64ffda"; // Green food
+    gameCtx.fillRect(food.x, food.y, 10, 10);
+    
+    // Draw Snake
+    snake.forEach(part => {
+        gameCtx.fillStyle = "#D4AF37"; // Gold snake
+        gameCtx.fillRect(part.x, part.y, 10, 10);
+        gameCtx.strokeStyle = "#112240";
+        gameCtx.strokeRect(part.x, part.y, 10, 10);
+    });
+}
+
+function createFood() {
+    food.x = Math.floor(Math.random() * (gameCanvas.width / 10)) * 10;
+    food.y = Math.floor(Math.random() * (gameCanvas.height / 10)) * 10;
+}
+
+function didGameEnd() {
+    for (let i = 4; i < snake.length; i++) {
+        if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
+    }
+    const hitLeftWall = snake[0].x < 0;
+    const hitRightWall = snake[0].x > gameCanvas.width - 10;
+    const hitToptWall = snake[0].y < 0;
+    const hitBottomWall = snake[0].y > gameCanvas.height - 10;
+    return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
+}
+
+// Controls
+document.addEventListener("keydown", changeDirection);
+
+function changeDirection(event) {
+    const LEFT_KEY = 37;
+    const RIGHT_KEY = 39;
+    const UP_KEY = 38;
+    const DOWN_KEY = 40;
+    
+    const keyPressed = event.keyCode;
+    const goingUp = dy === -10;
+    const goingDown = dy === 10;
+    const goingRight = dx === 10;
+    const goingLeft = dx === -10;
+    
+    if (keyPressed === LEFT_KEY && !goingRight) { dx = -10; dy = 0; }
+    if (keyPressed === UP_KEY && !goingDown) { dx = 0; dy = -10; }
+    if (keyPressed === RIGHT_KEY && !goingLeft) { dx = 10; dy = 0; }
+    if (keyPressed === DOWN_KEY && !goingUp) { dx = 0; dy = 10; }
+}
